@@ -8,10 +8,11 @@ class Modal extends Component{
         <Portal>
             { on &&(
             <ModalWrapper>
-                <ModalWindow>
+                <ModalCard>
                  <CloseButton onClick={toggle}>Close</CloseButton>
                <div>{children}</div>
-               </ModalWindow>
+               </ModalCard>
+               <Background onClick={toggle}/>
             </ModalWrapper>
             )}
         </Portal>
@@ -24,19 +25,39 @@ top:0;
 left:;
 width:100%;
 height:100%;
-background: teal;
+
 display: flex;
 justify-content:center;
 align-items:center;
 `;
-const ModalWindow=styled.div`
+const ModalCard=styled.div`
 position:absolute;
+background: white;
+border-radius: 5px;
+padding:15px;
+box-shadow: 2px 2px 10px rgba(0,0,0, 0.3);
+min-width: 200px;
+min-height:100px;
+display: flex;
+justify-content:center;
+align-items:center;
+z-index:10;
+margin-bottom: 100px;
 `;
 const CloseButton= styled.div`
 position:absolute;
 top:0;
 right:0;
-background : white;
+
+`;
+const Background= styled.div`
+position: absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:black;
+opacity: 0.5;
 `;
 
 export default Modal ;
