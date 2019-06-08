@@ -9,7 +9,7 @@ class Modal extends Component{
             { on &&(
             <ModalWrapper>
                 <ModalCard>
-                 <CloseButton onClick={toggle}>Close</CloseButton>
+                 <CloseButton onClick={toggle}>X</CloseButton>
                <div>{children}</div>
                </ModalCard>
                <Background onClick={toggle}/>
@@ -25,7 +25,6 @@ top:0;
 left:;
 width:100%;
 height:100%;
-
 display: flex;
 justify-content:center;
 align-items:center;
@@ -48,6 +47,7 @@ const CloseButton= styled.div`
 position:absolute;
 top:0;
 right:0;
+color:red;
 
 `;
 const Background= styled.div`

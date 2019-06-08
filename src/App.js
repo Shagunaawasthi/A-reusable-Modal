@@ -1,7 +1,11 @@
+
+
+    
 import React, { Component,Fragment} from 'react';
 import Toggle from './toggle';
 import Portal from './portal';
-import Modal from './modal.js'
+import Modal from './modal.js';
+import styled from 'styled-components'
 
 class App extends Component{
   render(){
@@ -11,9 +15,9 @@ class App extends Component{
       <Toggle >
       {({on ,toggle})=>(
         <Fragment>
-          <button onClick={toggle}  >Login</button>
+          <Button onClick={toggle}  >Login</Button>
          <Modal on={on} toggle={toggle }>
-         <h1>Still </h1>
+         <h1> Hi,there!! </h1>
          </Modal>
          </Fragment>
        
@@ -26,6 +30,16 @@ class App extends Component{
   } 
 }
 
+const Button= styled.div`
+position:relative;
+top:0;
+left:650px;
+background: lime;
+width:100px;
+height:25px;
+text-align:center;
+border-radius:5px;
+`;
 export default App;
 
 
